@@ -1,4 +1,4 @@
 # bio
-Personal Protfoli Website for an working individual professional.
+Personal Protfolio Website for an working individual professional.
 
 
