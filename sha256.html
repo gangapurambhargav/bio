@@ -18,9 +18,9 @@ text-align:center;
         function generateHash()
 	         {
             var plainText = document.getElementById('plainText').value;
-	          var md = forge.md.sha256.create();  
-            md.start();  
-            md.update(plainText, "utf8");  
+	    var md = forge.md.sha256.create();  
+             md.start();  
+             md.update(plainText, "utf8");  
             var hashedT = md.digest().toHex();  
             document.getElementById("hashedT").innerHTML = hashedT;
         }        
