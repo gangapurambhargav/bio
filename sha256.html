@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Sha256</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+/** Script for jquery and FORGE JS **/
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/forge/0.8.2/forge.all.min.js"></script>
+<style>
+.center{
+border:5px solid #FFFF00;
+text-align:center;
+}
+</style>
+<script type="text/Javascript">
+        function generateHash()
+	         {
+            var plainText = document.getElementById('plainText').value;
+	          var md = forge.md.sha256.create();  
+            md.start();  
+            md.update(plainText, "utf8");  
+            var hashedT = md.digest().toHex();  
+            document.getElementById("hashedT").innerHTML = hashedT;
+        }        
+    </script>
+</head>
+<body>
+<div class="center">
+<h1> JS SHA256 Hash Example using Forge</h1>
+<br> <br> <strong> Enter the sample text: </strong><input id='plainText' type='text'/>
+<br> <br> <strong> Hashed Text (SHA 256): </strong><span id='hashedT'></span>
+<br> <br> <button onclick="generateHash()"> Generate Hash </button>
+</body>
+</html>
+
